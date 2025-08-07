@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMark Spaza - Website Wireframes</title>
+    <style>
+        /* Wireframe Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .wireframe-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .wireframe-title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        
+        .page-wireframe {
+            margin-bottom: 60px;
+            border: 3px solid #34495e;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .page-title {
+            background-color: #34495e;
+            color: white;
+            padding: 15px 20px;
+            margin: 0;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .wireframe-content {
+            padding: 0;
+            background: white;
+        }
+        
+        /* Wireframe Elements */
+        .wf-header {
+            background: #ecf0f1;
+            border-bottom: 2px solid #bdc3c7;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .wf-logo {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .wf-nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .wf-nav-item {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        
+        .wf-hero {
+            background: #d5dbdb;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px dashed #95a5a6;
+        }
+        
+        .wf-hero-text {
+            background: #ecf0f1;
+            padding: 20px;
+            margin: 0 auto 20px;
+            max-width: 600px;
+            border-radius: 4px;
+        }
+        
+        .wf-hero-image {
+            background: #95a5a6;
+            height: 200px;
+            width: 300px;
+            margin: 0 auto;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .wf-section {
+            padding: 30px 20px;
+            border-bottom: 2px dashed #bdc3c7;
+        }
+        
+        .wf-section-title {
+            background: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .wf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .wf-card {
+            background: #ecf0f1;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .wf-image-placeholder {
+            background: #95a5a6;
+            height: 120px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .wf-button {
+            background: #27ae60;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .wf-form {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #bdc3c7;
+        }
+        
+        .wf-form-group {
+            margin-bottom: 15px;
+        }
+        
+        .wf-label {
+            background: #34495e;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .wf-input {
+            background: white;
+            border: 2px solid #bdc3c7;
+            padding: 8px;
+            width: 100%;
+            border-radius: 4px;
+        }
+        
+        .wf-footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .wf-sidebar {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .wf-main-content {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .wf-two-column {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .wf-search-bar {
+            background: white;
+            border: 2px solid #3498db;
+            padding: 10px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .wf-filter-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .wf-filter-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .annotations {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .annotation-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .wf-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .wf-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .wf-two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .wf-hero-image {
+                width: 250px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <h1 class="wireframe-title">🖼️ QuickMark Spaza Website Wireframes</h1>
+        
+        <div class="annotations">
+            <div class="annotation-title">📋 Wireframe Documentation</div>
+            <p><strong>Purpose:</strong> These wireframes show the layout structure and component placement for the QuickMark Spaza website.</p>
+            <p><strong>Target Audience:</strong> Local community members in Soweto looking for grocery information</p>
+            <p><strong>Design Approach:</strong> Clean, simple layout with clear navigation and mobile-responsive design</p>
+        </div>
+
+        <!-- Homepage Wireframe -->
+        <div class="page-wireframe">
+            <h2 class="page-title">1. Homepage (index.html)</h2>
+            <div class="wireframe-content">
+                <!-- Header -->
+                <div class="wf-header">
+                    <div class="wf-logo">QUICKMARK LOGO</div>
+                    <nav class="wf-nav">
+                        <a href="#" class="wf-nav-item">Home</a>
+                        <a href="#" class="wf-nav-item">About</a>
+                        <a href="#" class="wf-nav-item">Products</a>
+                        <a href="#" class="wf-nav-item">Contact</a>
+                    </nav>
+                </div>
+                
+                <!-- Hero Section -->
+                <div class="wf-hero">
+                    <div class="wf-hero-text">
+                        <h3>Welcome to QuickMark Spaza!</h3>
+                        <p>Hero text about the shop and community service</p>
+                        <button class="wf-button">Learn More About Us</button>
+                    </div>
+                    <div class="wf-hero-image">SHOP FRONT IMAGE</div>
+                </div>
+                
+                <!-- Featured Products Section -->
+                <div class="wf-section">
+                    <div class="wf-section-title">What We Offer</div>
+                    <div class="wf-grid">
+                        <div class="wf-card">
+                            <div class="wf-image-placeholder">MAIZE MEAL</div>
+                            <h4>Maize Meal</h4>
+                            <p>R25.99</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                        <div class="wf-card">
+                            <div class="wf-image-placeholder">FRESH BREAD</div>
+                            <h4>Fresh Bread</h4>
+                            <p>R12.50</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                        <div class="wf-card">
+                            <div class="wf-image-placeholder">COOL DRINKS</div>
+                            <h4>Cool Drinks</h4>
+                            <p>R15.00</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                        <div class="wf-card">
+                            <div class="wf-image-placeholder">TOILETRIES</div>
+                            <h4>Soap & Toiletries</h4>
+                            <p>R8.99</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Info Section -->
+                <div class="wf-section">
+                    <div class="wf-section-title">Shop Information</div>
+                    <div class="wf-grid">
+                        <div class="wf-card">
+                            <h4>Operating Hours</h4>
+                            <p>Mon-Sat: 7AM-8PM<br>Sun: 8AM-6PM</p>
+                        </div>
+                        <div class="wf-card">
+                            <h4>Location</h4>
+                            <p>123 Main Street<br>Soweto, Johannesburg</p>
+                        </div>
+                        <div class="wf-card">
+                            <h4>Our Services</h4>
+                            <p>Fresh groceries, Airtime, Electricity</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Footer -->
+                <div class="wf-footer">
+                    <p>© 2024 QuickMark Spaza Shop | Contact: 011-123-4567</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page Wireframe -->
+        <div class="page-wireframe">
+            <h2 class="page-title">2. About Page (about.html)</h2>
+            <div class="wireframe-content">
+                <!-- Header (Same as Homepage) -->
+                <div class="wf-header">
+                    <div class="wf-logo">QUICKMARK LOGO</div>
+                    <nav class="wf-nav">
+                        <a href="#" class="wf-nav-item">Home</a>
+                        <a href="#" class="wf-nav-item">About</a>
+                        <a href="#" class="wf-nav-item">Products</a>
+                        <a href="#" class="wf-nav-item">Contact</a>
+                    </nav>
+                </div>
+                
+                <!-- Page Header -->
+                <div class="wf-hero">
+                    <div class="wf-hero-text">
+                        <h2>About QuickMark Spaza</h2>
+                        <p>Learn more about our story and mission</p>
+                    </div>
+                </div>
+                
+                <!-- Our Story Section -->
+                <div class="wf-section">
+                    <div class="wf-section-title">Our Story</div>
+                    <div class="wf-two-column">
+                        <div class="wf-main-content">
+                            <h3>Our Story</h3>
+                            <p>Text about shop history since 2018...</p>
+                            <p>Community service and mission...</p>
+                            <button class="wf-button">Read More</button>
+                            <div style="background: #f8f9fa; padding: 15px; margin-top: 15px; border-radius: 4px;">
+                                [HIDDEN DETAILS - Shown when "Read More" clicked]
+                            </div>
+                        </div>
+                        <div class="wf-sidebar">
+                            <div class="wf-image-placeholder">SHOP OWNER PHOTO</div>
+                            <p>Mrs. Sarah Mthembu, Founder & Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mission & Values -->
+                <div class="wf-section">
+                    <div class="wf-section-title">Mission & Values</div>
+                    <div class="wf-grid">
+                        <div class="wf-card">
+                            <h4>Our Mission</h4>
+                            <p>Serve community with quality products...</p>
+                        </div>
+                        <div class="wf-card">
+                            <h4>Community First</h4>
+                            <p>Supporting neighbors and local growth...</p>
+                        </div>
+                        <div class="wf-card">
+                            <h4>Quality & Affordability</h4>
+                            <p>Fresh products at competitive prices...</p>
+                        </div>
+                        <div class="wf-card">
+                            <h4>Reliable Service</h4>
+                            <p>Consistent hours and friendly service...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div class="wf-section">
+                    <div class="wf-section-title">Our Achievements</div>
+                    <div class="wf-grid">
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #e74c3c;">
+                            <h4>6+ Years</h4>
+                            <p>Operating since 2018</p>
+                            <small>[CLICKABLE - Highlights when clicked]</small>
+                        </div>
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #e74c3c;">
+                            <h4>200+</h4>
+                            <p>Daily customers served</p>
+                        </div>
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #e74c3c;">
+                            <h4>5</h4>
+                            <p>Local jobs created</p>
+                        </div>
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #e74c3c;">
+                            <h4>100%</h4>
+                            <p>Community owned</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Footer -->
+                <div class="wf-footer">
+                    <p>© 2024 QuickMark Spaza Shop | Contact: 011-123-4567</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Page Wireframe -->
+        <div class="page-wireframe">
+            <h2 class="page-title">3. Products Page (products.html)</h2>
+            <div class="wireframe-content">
+                <!-- Header (Same as other pages) -->
+                <div class="wf-header">
+                    <div class="wf-logo">QUICKMARK LOGO</div>
+                    <nav class="wf-nav">
+                        <a href="#" class="wf-nav-item">Home</a>
+                        <a href="#" class="wf-nav-item">About</a>
+                        <a href="#" class="wf-nav-item">Products</a>
+                        <a href="#" class="wf-nav-item">Contact</a>
+                    </nav>
+                </div>
+                
+                <!-- Page Header -->
+                <div class="wf-hero">
+                    <div class="wf-hero-text">
+                        <h2>Our Products</h2>
+                        <p>Essential items for your daily needs - all at affordable prices</p>
+                    </div>
+                </div>
+                
+                <!-- Search and Filter Section -->
+                <div class="wf-section">
+                    <div class="wf-search-bar">
+                        <input type="text" placeholder="Search for products..." style="border: none; padding: 5px; width: 300px;">
+                        <button class="wf-button">Search</button>
+                    </div>
+                    
+                    <div class="wf-filter-buttons">
+                        <button class="wf-filter-btn">All Products</button>
+                        <button class="wf-filter-btn">Groceries</button>
+                        <button class="wf-filter-btn">Drinks</button>
+                        <button class="wf-filter-btn">Toiletries</button>
+                        <button class="wf-filter-btn">Household</button>
+                    </div>
+                </div>
+                
+                <!-- Products Display -->
+                <div class="wf-section">
+                    <div class="wf-section-title">Groceries</div>
+                    <div class="wf-grid">
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #3498db;">
+                            <div class="wf-image-placeholder">MAIZE MEAL</div>
+                            <h4>Maize Meal (2.5kg)</h4>
+                            <p style="color: #e74c3c; font-weight: bold;">R25.99</p>
+                            <p>Premium white maize meal</p>
+                            <button class="wf-button">More Info</button>
+                            <small>[CLICKABLE - Opens Modal]</small>
+                        </div>
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #3498db;">
+                            <div class="wf-image-placeholder">BREAD</div>
+                            <h4>Fresh Bread</h4>
+                            <p style="color: #e74c3c; font-weight: bold;">R12.50</p>
+                            <p>Daily fresh white bread</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #3498db;">
+                            <div class="wf-image-placeholder">RICE</div>
+                            <h4>Rice (2kg)</h4>
+                            <p style="color: #e74c3c; font-weight: bold;">R28.99</p>
+                            <p>Long grain white rice</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #3498db;">
+                            <div class="wf-image-placeholder">SUGAR</div>
+                            <h4>Sugar (2kg)</h4>
+                            <p style="color: #e74c3c; font-weight: bold;">R22.50</p>
+                            <p>White granulated sugar</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wf-section">
+                    <div class="wf-section-title">Drinks & Beverages</div>
+                    <div class="wf-grid">
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #3498db;">
+                            <div class="wf-image-placeholder">COCA COLA</div>
+                            <h4>Coca Cola (500ml)</h4>
+                            <p style="color: #e74c3c; font-weight: bold;">R15.00</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #3498db;">
+                            <div class="wf-image-placeholder">WATER</div>
+                            <h4>Bottled Water</h4>
+                            <p style="color: #e74c3c; font-weight: bold;">R8.50</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                        <div class="wf-card" style="cursor: pointer; border: 2px dashed #3498db;">
+                            <div class="wf-image-placeholder">OROS</div>
+                            <h4>Oros (2L)</h4>
+                            <p style="color: #e74c3c; font-weight: bold;">R18.99</p>
+                            <button class="wf-button">More Info</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal Wireframe -->
+                <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; border: 3px dashed #e74c3c;">
+                    <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; position: relative;">
+                        <span style="position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer;">×</span>
+                        <h3>[PRODUCT NAME]</h3>
+                        <p style="color: #e74c3c; font-weight: bold;">[PRICE]</p>
+                        <p>[DETAILED DESCRIPTION]</p>
+                        <button class="wf-button">Close</button>
+                        <div style="margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 4px; font-size: 0.9rem;">
+                            <strong>Modal Features:</strong><br>
+                            • Click X to close<br>
+                            • Click outside to close<br>
+                            • Press ESC to close<br>
+                            • Click Close button
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Footer -->
+                <div class="wf-footer">
+                    <p>© 2024 QuickMark Spaza Shop | Contact: 011-123-4567</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page Wireframe -->
+        <div class="page-wireframe">
+            <h2 class="page-title">4. Contact Page (contact.html)</h2>
+            <div class="wireframe-content">
+                <!-- Header (Same as other pages) -->
+                <div class="wf-header">
+                    <div class="wf-logo">QUICKMARK LOGO</div>
+                    <nav class="wf-nav">
+                        <a href="#" class="wf-nav-item">Home</a>
+                        <a href="#" class="wf-nav-item">About</a>
+                        <a href="#" class="wf-nav-item">Products</a>
+                        <a href="#" class="wf-nav-item">Contact</a>
+                    </nav>
+                </div>
+
+                <!-- Page Header -->
+                <div class="wf-hero">
+                    <div class="wf-hero-text">
+                        <h2>Contact Us</h2>
+                        <p>Get in touch with QuickMark Spaza Shop</p>
+                    </div>
+                </div>
+
+                <!-- Contact Content -->
+                <div class="wf-section">
+                    <div class="wf-two-column">
+                        <!-- Contact Information -->
+                        <div class="wf-sidebar">
+                            <div class="wf-section-title">Visit Our Shop</div>
+
+                            <div style="margin-bottom: 20px;">
+                                <div class="wf-label">📍 Address</div>
+                                <div style="background: white; padding: 10px; border-radius: 4px; border: 1px solid #bdc3c7;">
+                                    123 Main Street<br>
+                                    Soweto, Johannesburg<br>
+                                    Gauteng, 1818
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <div class="wf-label">📞 Phone</div>
+                                <div style="background: white; padding: 10px; border-radius: 4px; border: 1px solid #bdc3c7;">
+                                    011-123-4567<br>
+                                    WhatsApp: 071-234-5678
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <div class="wf-label">📧 Email</div>
+                                <div style="background: white; padding: 10px; border-radius: 4px; border: 1px solid #bdc3c7;">
+                                    quickmark@spaza.co.za
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <div class="wf-label">🕒 Operating Hours</div>
+                                <div style="background: white; padding: 10px; border-radius: 4px; border: 1px solid #bdc3c7;">
+                                    <strong>Mon-Sat:</strong> 7:00 AM - 8:00 PM<br>
+                                    <strong>Sunday:</strong> 8:00 AM - 6:00 PM<br>
+                                    <strong>Holidays:</strong> 9:00 AM - 5:00 PM
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="wf-main-content">
+                            <div class="wf-section-title">Send Us a Message</div>
+                            <p>Have a question or suggestion? We'd love to hear from you!</p>
+
+                            <div class="wf-form">
+                                <div class="wf-form-group">
+                                    <div class="wf-label">Full Name *</div>
+                                    <input type="text" class="wf-input" placeholder="Enter your full name">
+                                    <div style="color: #e74c3c; font-size: 0.8rem; margin-top: 3px;">[Error message area]</div>
+                                </div>
+
+                                <div class="wf-form-group">
+                                    <div class="wf-label">Email Address *</div>
+                                    <input type="email" class="wf-input" placeholder="Enter your email">
+                                    <div style="color: #e74c3c; font-size: 0.8rem; margin-top: 3px;">[Error message area]</div>
+                                </div>
+
+                                <div class="wf-form-group">
+                                    <div class="wf-label">Phone Number</div>
+                                    <input type="tel" class="wf-input" placeholder="Enter your phone number (optional)">
+                                    <div style="color: #e74c3c; font-size: 0.8rem; margin-top: 3px;">[Error message area]</div>
+                                </div>
+
+                                <div class="wf-form-group">
+                                    <div class="wf-label">Subject *</div>
+                                    <select class="wf-input">
+                                        <option>Please select a subject</option>
+                                        <option>General Inquiry</option>
+                                        <option>Product Availability</option>
+                                        <option>Delivery Request</option>
+                                        <option>Complaint</option>
+                                        <option>Suggestion</option>
+                                    </select>
+                                    <div style="color: #e74c3c; font-size: 0.8rem; margin-top: 3px;">[Error message area]</div>
+                                </div>
+
+                                <div class="wf-form-group">
+                                    <div class="wf-label">Message *</div>
+                                    <textarea class="wf-input" rows="5" placeholder="Please enter your message here..."></textarea>
+                                    <div style="color: #e74c3c; font-size: 0.8rem; margin-top: 3px;">[Error message area]</div>
+                                </div>
+
+                                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                                    <button class="wf-button" style="background: #27ae60;">Send Message</button>
+                                    <button class="wf-button" style="background: #95a5a6;">Clear Form</button>
+                                </div>
+
+                                <!-- Success Message (Hidden by default) -->
+                                <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 4px; margin-top: 15px; border: 1px dashed #27ae60;">
+                                    <h4>✅ Message Sent Successfully!</h4>
+                                    <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                                    <small>[HIDDEN by default - Shows after successful form submission]</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="wf-section">
+                    <div class="wf-section-title">Find Us</div>
+                    <div style="position: relative; background: #95a5a6; height: 300px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                        MAP IMAGE PLACEHOLDER
+                        <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(44, 62, 80, 0.9); color: white; padding: 15px; border-radius: 5px;">
+                            📍 QuickMark Spaza Shop<br>
+                            123 Main Street, Soweto<br>
+                            <button class="wf-button" style="margin-top: 10px;">Get Directions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Services -->
+                <div class="wf-section">
+                    <div class="wf-section-title">Additional Services</div>
+                    <div class="wf-grid">
+                        <div class="wf-card">
+                            <h4>🚚 Local Delivery</h4>
+                            <p>We offer delivery service within 5km radius for orders over R50.</p>
+                        </div>
+                        <div class="wf-card">
+                            <h4>📋 Special Orders</h4>
+                            <p>Need something we don't usually stock? Let us know and we'll try to get it.</p>
+                        </div>
+                        <div class="wf-card">
+                            <h4>🤝 Community Support</h4>
+                            <p>We support local events and initiatives. Contact us for sponsorship opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="wf-footer">
+                    <p>© 2024 QuickMark Spaza Shop | Contact: 011-123-4567</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="annotations">
+            <div class="annotation-title">📱 Responsive Design Notes</div>
+            <p><strong>Mobile Layout:</strong> Navigation collapses to vertical stack, hero images resize, product grid becomes single column, contact form stacks vertically</p>
+            <p><strong>Tablet Layout:</strong> 2-column product grid, adjusted spacing and font sizes, contact form maintains two-column layout</p>
+            <p><strong>Desktop Layout:</strong> Full 4-column product grid, horizontal navigation, optimal spacing, side-by-side contact info and form</p>
+        </div>
+
+        <div class="annotations">
+            <div class="annotation-title">🎯 Interactive Elements</div>
+            <ul>
+                <li><strong>Homepage:</strong> "Learn More" button shows welcome message</li>
+                <li><strong>About Page:</strong> "Read More" toggles additional content, achievement cards highlight on click</li>
+                <li><strong>Products Page:</strong> Search functionality, category filters, product modals with multiple close methods</li>
+                <li><strong>Contact Page:</strong> Form validation, clear error messages, success feedback</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

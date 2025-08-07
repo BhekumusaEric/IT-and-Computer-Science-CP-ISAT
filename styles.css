@@ -709,33 +709,6 @@ footer p {
     outline-offset: 2px;
 }
 
-/* Modal content styling */
-.modal-content h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.modal-content p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.modal-content button {
-    margin-top: 1rem;
-    width: 100%;
-}
-
-/* Ensure modal is above everything else */
-.modal {
-    z-index: 10000 !important;
-}
-
-/* Prevent scrolling when modal is open */
-body.modal-open {
-    overflow: hidden;
-}
-
 /* Responsive adjustments for additional components */
 @media (max-width: 768px) {
     .story-content, .contact-content {

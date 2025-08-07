@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMark Spaza - Draw.io Style Wireframes</title>
+    <style>
+        /* Draw.io Style Wireframe CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .wireframe-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .wireframe-header {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .wireframe-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .wireframe-header p {
+            margin: 5px 0 0 0;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .wireframe-content {
+            padding: 30px;
+        }
+
+        /* Draw.io style elements */
+        .drawio-page {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .drawio-page-header {
+            background: #f3f4f6;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 15px 20px;
+            font-weight: 600;
+            color: #374151;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .drawio-canvas {
+            padding: 30px;
+            min-height: 600px;
+            position: relative;
+            background: #fefefe;
+        }
+
+        /* Wireframe elements with draw.io styling */
+        .wf-element {
+            position: absolute;
+            border: 2px solid #6b7280;
+            background: #f9fafb;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+            color: #374151;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .wf-header {
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            height: 60px;
+            background: #e5e7eb;
+            border-color: #9ca3af;
+        }
+
+        .wf-logo {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            width: 120px;
+            height: 40px;
+            background: #ef4444;
+            color: white;
+            border-color: #dc2626;
+            font-weight: 600;
+        }
+
+        .wf-nav {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            width: 300px;
+            height: 40px;
+            background: #3b82f6;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        .wf-hero {
+            top: 100px;
+            left: 20px;
+            right: 20px;
+            height: 200px;
+            background: #ddd6fe;
+            border-color: #8b5cf6;
+        }
+
+        .wf-hero-text {
+            position: absolute;
+            top: 120px;
+            left: 40px;
+            width: 300px;
+            height: 80px;
+            background: #f3f4f6;
+            border-color: #6b7280;
+        }
+
+        .wf-hero-image {
+            position: absolute;
+            top: 120px;
+            right: 40px;
+            width: 200px;
+            height: 160px;
+            background: #9ca3af;
+            color: white;
+            border-color: #6b7280;
+        }
+
+        .wf-section {
+            top: 320px;
+            left: 20px;
+            right: 20px;
+            height: 40px;
+            background: #fbbf24;
+            color: white;
+            border-color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .wf-grid {
+            top: 380px;
+            left: 20px;
+            right: 20px;
+            height: 180px;
+            background: #f9fafb;
+            border-color: #d1d5db;
+            border-style: dashed;
+        }
+
+        .wf-card {
+            position: absolute;
+            width: 140px;
+            height: 120px;
+            background: white;
+            border-color: #9ca3af;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .wf-card:nth-child(1) { top: 400px; left: 40px; }
+        .wf-card:nth-child(2) { top: 400px; left: 200px; }
+        .wf-card:nth-child(3) { top: 400px; left: 360px; }
+        .wf-card:nth-child(4) { top: 400px; left: 520px; }
+
+        .wf-footer {
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 50px;
+            background: #374151;
+            color: white;
+            border-color: #1f2937;
+        }
+
+        /* Annotations */
+        .annotation {
+            position: absolute;
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 11px;
+            color: #92400e;
+            max-width: 150px;
+            line-height: 1.3;
+        }
+
+        .annotation::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #f59e0b;
+            top: -6px;
+            left: 20px;
+        }
+
+        /* Connection lines */
+        .connection-line {
+            position: absolute;
+            border-top: 1px dashed #6b7280;
+            z-index: 1;
+        }
+
+        /* Device frames */
+        .device-frame {
+            border: 3px solid #374151;
+            border-radius: 12px;
+            background: white;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .desktop-frame {
+            width: 800px;
+            height: 600px;
+        }
+
+        .tablet-frame {
+            width: 500px;
+            height: 700px;
+        }
+
+        .mobile-frame {
+            width: 300px;
+            height: 600px;
+        }
+
+        .device-label {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #374151;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Responsive grid */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 1200px) {
+            .responsive-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Interactive elements */
+        .interactive-element {
+            border: 2px dashed #ef4444 !important;
+            background: #fef2f2 !important;
+            position: relative;
+        }
+
+        .interactive-element::after {
+            content: '🖱️ INTERACTIVE';
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            background: #ef4444;
+            color: white;
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* Form elements */
+        .wf-form {
+            background: #f8fafc;
+            border: 2px solid #cbd5e1;
+        }
+
+        .wf-input {
+            background: white;
+            border: 1px solid #d1d5db;
+            height: 20px;
+            margin: 5px;
+            border-radius: 2px;
+        }
+
+        /* Modal overlay */
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ef4444;
+        }
+
+        .modal-content {
+            background: white;
+            border: 2px solid #374151;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            height: 150px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="wireframe-header">
+            <h1>📐 QuickMark Spaza Website - Draw.io Style Wireframes</h1>
+            <p>Professional wireframe mockups for NQF Level 4 ISAT Assessment</p>
+        </div>
+
+        <div class="wireframe-content">
+            <!-- Desktop Homepage Wireframe -->
+            <div class="drawio-page">
+                <div class="drawio-page-header">
+                    <span>🖥️</span>
+                    <span>Homepage - Desktop Layout (1200px+)</span>
+                </div>
+                <div class="drawio-canvas">
+                    <div class="device-frame desktop-frame">
+                        <div class="device-label">Desktop View</div>
+                        
+                        <!-- Header -->
+                        <div class="wf-element wf-header">
+                            HEADER SECTION
+                        </div>
+                        
+                        <!-- Logo -->
+                        <div class="wf-element wf-logo">
+                            QUICKMARK LOGO
+                        </div>
+                        
+                        <!-- Navigation -->
+                        <div class="wf-element wf-nav">
+                            HOME | ABOUT | PRODUCTS | CONTACT
+                        </div>
+                        
+                        <!-- Hero Section -->
+                        <div class="wf-element wf-hero">
+                            HERO SECTION
+                        </div>
+                        
+                        <!-- Hero Text -->
+                        <div class="wf-element wf-hero-text">
+                            WELCOME TEXT<br>
+                            DESCRIPTION<br>
+                            <div style="background: #10b981; color: white; padding: 4px 8px; border-radius: 3px; margin-top: 8px; font-size: 10px;">
+                                LEARN MORE BUTTON
+                            </div>
+                        </div>
+                        
+                        <!-- Hero Image -->
+                        <div class="wf-element wf-hero-image">
+                            SHOP FRONT<br>IMAGE
+                        </div>
+                        
+                        <!-- Section Title -->
+                        <div class="wf-element wf-section">
+                            WHAT WE OFFER - SECTION TITLE
+                        </div>
+                        
+                        <!-- Product Grid -->
+                        <div class="wf-element wf-grid">
+                            PRODUCT GRID CONTAINER
+                        </div>
+                        
+                        <!-- Product Cards -->
+                        <div class="wf-element wf-card interactive-element">
+                            MAIZE MEAL<br>
+                            R25.99<br>
+                            <div style="font-size: 9px; margin-top: 4px;">MORE INFO</div>
+                        </div>
+                        
+                        <div class="wf-element wf-card interactive-element">
+                            FRESH BREAD<br>
+                            R12.50<br>
+                            <div style="font-size: 9px; margin-top: 4px;">MORE INFO</div>
+                        </div>
+                        
+                        <div class="wf-element wf-card interactive-element">
+                            COOL DRINKS<br>
+                            R15.00<br>
+                            <div style="font-size: 9px; margin-top: 4px;">MORE INFO</div>
+                        </div>
+                        
+                        <div class="wf-element wf-card interactive-element">
+                            TOILETRIES<br>
+                            R8.99<br>
+                            <div style="font-size: 9px; margin-top: 4px;">MORE INFO</div>
+                        </div>
+                        
+                        <!-- Footer -->
+                        <div class="wf-element wf-footer">
+                            FOOTER - COPYRIGHT & CONTACT INFO
+                        </div>
+                        
+                        <!-- Annotations -->
+                        <div class="annotation" style="top: 90px; right: -180px;">
+                            Logo displays SVG with hover effect. Clickable to return home.
+                        </div>
+                        
+                        <div class="annotation" style="top: 200px; left: -180px;">
+                            Hero section with call-to-action button that shows welcome message.
+                        </div>
+                        
+                        <div class="annotation" style="top: 450px; right: -180px;">
+                            Product cards are clickable and show product information alerts.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Page with Modal -->
+            <div class="drawio-page">
+                <div class="drawio-page-header">
+                    <span>🛒</span>
+                    <span>Products Page - With Modal Interaction</span>
+                </div>
+                <div class="drawio-canvas">
+                    <div class="device-frame desktop-frame">
+                        <div class="device-label">Products Page - Modal Open</div>
+                        
+                        <!-- Header -->
+                        <div class="wf-element wf-header">HEADER WITH NAVIGATION</div>
+                        
+                        <!-- Search Bar -->
+                        <div class="wf-element" style="top: 100px; left: 20px; right: 20px; height: 40px; background: #e0f2fe; border-color: #0284c7;">
+                            SEARCH BAR & CATEGORY FILTERS
+                        </div>
+                        
+                        <!-- Filter Buttons -->
+                        <div class="wf-element interactive-element" style="top: 120px; left: 40px; width: 80px; height: 20px; background: #ef4444; color: white; font-size: 10px;">
+                            ALL
+                        </div>
+                        <div class="wf-element interactive-element" style="top: 120px; left: 130px; width: 80px; height: 20px;">
+                            GROCERIES
+                        </div>
+                        <div class="wf-element interactive-element" style="top: 120px; left: 220px; width: 80px; height: 20px;">
+                            DRINKS
+                        </div>
+                        
+                        <!-- Product Categories -->
+                        <div class="wf-element" style="top: 160px; left: 20px; right: 20px; height: 30px; background: #fbbf24; color: white;">
+                            GROCERIES CATEGORY
+                        </div>
+                        
+                        <!-- Product Grid -->
+                        <div class="wf-element wf-grid" style="top: 200px; height: 120px;">
+                            PRODUCT GRID
+                        </div>
+                        
+                        <!-- Sample Products -->
+                        <div class="wf-element wf-card interactive-element" style="top: 220px; left: 40px; width: 100px; height: 80px;">
+                            RICE<br>R28.99
+                        </div>
+                        <div class="wf-element wf-card interactive-element" style="top: 220px; left: 160px; width: 100px; height: 80px;">
+                            SUGAR<br>R22.50
+                        </div>
+                        
+                        <!-- Modal Overlay -->
+                        <div class="modal-overlay">
+                            <div class="modal-content">
+                                <div class="close-btn">×</div>
+                                <div style="text-align: center; padding: 10px;">
+                                    <h4 style="margin: 0 0 10px 0; color: #374151;">Rice (2kg)</h4>
+                                    <p style="margin: 0 0 10px 0; color: #ef4444; font-weight: bold;">R28.99</p>
+                                    <p style="margin: 0 0 15px 0; font-size: 11px; color: #6b7280;">
+                                        High quality long grain white rice, perfect for family meals.
+                                    </p>
+                                    <div style="background: #3b82f6; color: white; padding: 4px 8px; border-radius: 3px; font-size: 10px;">
+                                        CLOSE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Modal Annotations -->
+                        <div class="annotation" style="top: 100px; right: -200px;">
+                            Modal opens when product card is clicked. Can be closed by:<br>
+                            • Clicking X button<br>
+                            • Clicking outside<br>
+                            • Pressing ESC key<br>
+                            • Clicking Close button
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsive Layout Comparison -->
+            <div class="drawio-page">
+                <div class="drawio-page-header">
+                    <span>📱</span>
+                    <span>Responsive Design - Multi-Device Layout</span>
+                </div>
+                <div class="drawio-canvas" style="min-height: 800px;">
+                    <div class="responsive-grid">
+                        <!-- Desktop -->
+                        <div>
+                            <div class="device-frame desktop-frame" style="transform: scale(0.6); margin: -60px auto;">
+                                <div class="device-label">Desktop (1200px+)</div>
+                                <div class="wf-element" style="top: 20px; left: 20px; right: 20px; height: 40px; background: #e5e7eb;">
+                                    HORIZONTAL NAVIGATION
+                                </div>
+                                <div class="wf-element" style="top: 80px; left: 20px; right: 20px; height: 100px; background: #ddd6fe;">
+                                    HERO SECTION - SIDE BY SIDE
+                                </div>
+                                <div class="wf-element" style="top: 200px; left: 20px; width: 120px; height: 80px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 1
+                                </div>
+                                <div class="wf-element" style="top: 200px; left: 160px; width: 120px; height: 80px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 2
+                                </div>
+                                <div class="wf-element" style="top: 200px; left: 300px; width: 120px; height: 80px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 3
+                                </div>
+                                <div class="wf-element" style="top: 200px; left: 440px; width: 120px; height: 80px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 4
+                                </div>
+                            </div>
+                            <div class="annotation" style="position: relative; top: -50px; left: 0; max-width: 200px;">
+                                4-column product grid, horizontal navigation, full-width hero section
+                            </div>
+                        </div>
+
+                        <!-- Tablet -->
+                        <div>
+                            <div class="device-frame tablet-frame" style="transform: scale(0.6); margin: -100px auto;">
+                                <div class="device-label">Tablet (768px-1199px)</div>
+                                <div class="wf-element" style="top: 20px; left: 20px; right: 20px; height: 50px; background: #e5e7eb;">
+                                    WRAPPED NAVIGATION
+                                </div>
+                                <div class="wf-element" style="top: 90px; left: 20px; right: 20px; height: 120px; background: #ddd6fe;">
+                                    HERO SECTION - STACKED
+                                </div>
+                                <div class="wf-element" style="top: 230px; left: 20px; width: 140px; height: 100px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 1
+                                </div>
+                                <div class="wf-element" style="top: 230px; left: 180px; width: 140px; height: 100px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 2
+                                </div>
+                                <div class="wf-element" style="top: 350px; left: 20px; width: 140px; height: 100px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 3
+                                </div>
+                                <div class="wf-element" style="top: 350px; left: 180px; width: 140px; height: 100px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 4
+                                </div>
+                            </div>
+                            <div class="annotation" style="position: relative; top: -80px; left: 0; max-width: 200px;">
+                                2-column product grid, navigation may wrap, adjusted spacing
+                            </div>
+                        </div>
+
+                        <!-- Mobile -->
+                        <div>
+                            <div class="device-frame mobile-frame" style="transform: scale(0.8); margin: -60px auto;">
+                                <div class="device-label">Mobile (<768px)</div>
+                                <div class="wf-element" style="top: 20px; left: 20px; right: 20px; height: 80px; background: #e5e7eb;">
+                                    VERTICAL<br>NAVIGATION<br>STACK
+                                </div>
+                                <div class="wf-element" style="top: 120px; left: 20px; right: 20px; height: 100px; background: #ddd6fe;">
+                                    HERO SECTION<br>CENTERED
+                                </div>
+                                <div class="wf-element" style="top: 240px; left: 20px; right: 20px; height: 80px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 1
+                                </div>
+                                <div class="wf-element" style="top: 340px; left: 20px; right: 20px; height: 80px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 2
+                                </div>
+                                <div class="wf-element" style="top: 440px; left: 20px; right: 20px; height: 80px; background: white; border-color: #9ca3af;">
+                                    PRODUCT 3
+                                </div>
+                            </div>
+                            <div class="annotation" style="position: relative; top: -40px; left: 0; max-width: 200px;">
+                                Single-column layout, vertical navigation, stacked content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Page Form Wireframe -->
+            <div class="drawio-page">
+                <div class="drawio-page-header">
+                    <span>📞</span>
+                    <span>Contact Page - Form Layout & Validation</span>
+                </div>
+                <div class="drawio-canvas">
+                    <div class="device-frame desktop-frame">
+                        <div class="device-label">Contact Page Layout</div>
+                        
+                        <!-- Header -->
+                        <div class="wf-element wf-header">HEADER WITH NAVIGATION</div>
+                        
+                        <!-- Page Title -->
+                        <div class="wf-element" style="top: 100px; left: 20px; right: 20px; height: 60px; background: #374151; color: white;">
+                            CONTACT US - PAGE HEADER
+                        </div>
+                        
+                        <!-- Two Column Layout -->
+                        <!-- Contact Info Column -->
+                        <div class="wf-element" style="top: 180px; left: 20px; width: 250px; height: 300px; background: #f8fafc; border-color: #cbd5e1;">
+                            CONTACT INFORMATION<br><br>
+                            📍 Address<br>
+                            📞 Phone<br>
+                            📧 Email<br>
+                            🕒 Hours
+                        </div>
+                        
+                        <!-- Contact Form Column -->
+                        <div class="wf-element wf-form" style="top: 180px; left: 290px; right: 20px; height: 300px;">
+                            CONTACT FORM
+                        </div>
+                        
+                        <!-- Form Fields -->
+                        <div class="wf-element wf-input" style="top: 210px; left: 310px; width: 200px;">Name *</div>
+                        <div style="position: absolute; top: 235px; left: 520px; color: #ef4444; font-size: 10px;">[Error Message Area]</div>
+                        
+                        <div class="wf-element wf-input" style="top: 250px; left: 310px; width: 200px;">Email *</div>
+                        <div style="position: absolute; top: 275px; left: 520px; color: #ef4444; font-size: 10px;">[Error Message Area]</div>
+                        
+                        <div class="wf-element wf-input" style="top: 290px; left: 310px; width: 200px;">Phone</div>
+                        
+                        <div class="wf-element wf-input" style="top: 330px; left: 310px; width: 200px;">Subject *</div>
+                        
+                        <div class="wf-element wf-input" style="top: 370px; left: 310px; width: 200px; height: 60px;">Message *</div>
+                        
+                        <!-- Form Buttons -->
+                        <div class="wf-element interactive-element" style="top: 450px; left: 310px; width: 80px; height: 25px; background: #10b981; color: white;">
+                            SEND
+                        </div>
+                        <div class="wf-element interactive-element" style="top: 450px; left: 400px; width: 80px; height: 25px; background: #6b7280; color: white;">
+                            CLEAR
+                        </div>
+                        
+                        <!-- Success Message (Hidden) -->
+                        <div class="wf-element" style="top: 490px; left: 290px; right: 20px; height: 50px; background: #d1fae5; border-color: #10b981; color: #065f46;">
+                            ✅ SUCCESS MESSAGE (Hidden by default)
+                        </div>
+                        
+                        <!-- Map Section -->
+                        <div class="wf-element" style="bottom: 80px; left: 20px; right: 20px; height: 80px; background: #9ca3af; color: white;">
+                            MAP PLACEHOLDER WITH LOCATION OVERLAY
+                        </div>
+                        
+                        <!-- Footer -->
+                        <div class="wf-element wf-footer">FOOTER</div>
+                        
+                        <!-- Form Annotations -->
+                        <div class="annotation" style="top: 200px; right: -200px;">
+                            Form includes comprehensive validation:<br>
+                            • Required field checking<br>
+                            • Email format validation<br>
+                            • Phone number validation<br>
+                            • Character length requirements<br>
+                            • Real-time error messages
+                        </div>
+                        
+                        <div class="annotation" style="top: 400px; left: -200px;">
+                            Success message appears after form submission. Form is hidden and success message is shown.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Specifications -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 30px;">
+                <h3 style="margin: 0 0 15px 0; color: #1f2937;">📋 Technical Specifications</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4 style="color: #374151; margin: 0 0 10px 0;">🎨 Design System</h4>
+                        <ul style="margin: 0; padding-left: 20px; color: #6b7280; font-size: 14px;">
+                            <li><strong>Primary Red:</strong> #e74c3c (Prices, highlights)</li>
+                            <li><strong>Primary Blue:</strong> #2c3e50 (Headers, navigation)</li>
+                            <li><strong>Accent Blue:</strong> #3498db (Interactive elements)</li>
+                            <li><strong>Typography:</strong> Arial, sans-serif</li>
+                            <li><strong>Container:</strong> Max-width 1200px, centered</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #374151; margin: 0 0 10px 0;">📱 Responsive Breakpoints</h4>
+                        <ul style="margin: 0; padding-left: 20px; color: #6b7280; font-size: 14px;">
+                            <li><strong>Desktop:</strong> 1200px+ (4-column grid)</li>
+                            <li><strong>Tablet:</strong> 768px-1199px (2-column grid)</li>
+                            <li><strong>Mobile:</strong> 480px-767px (Single column)</li>
+                            <li><strong>Small Mobile:</strong> <480px (Compact layout)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 15px;">
+                    <h4 style="color: #374151; margin: 0 0 10px 0;">⚡ Interactive Features</h4>
+                    <ul style="margin: 0; padding-left: 20px; color: #6b7280; font-size: 14px;">
+                        <li><strong>Homepage:</strong> Welcome button with alert, clickable product cards</li>
+                        <li><strong>About:</strong> Read more toggle, clickable achievement highlights</li>
+                        <li><strong>Products:</strong> Search functionality, category filters, product modals</li>
+                        <li><strong>Contact:</strong> Form validation, success/error states, clear functionality</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
