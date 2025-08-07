@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Placeholder Images for QuickMark Spaza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .instructions {
+            background-color: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        .placeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .placeholder-item {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 2px dashed #bdc3c7;
+        }
+        .placeholder-image {
+            width: 250px;
+            height: 200px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .product-placeholder {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        .shop-placeholder {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+        .person-placeholder {
+            background: linear-gradient(135deg, #27ae60, #229954);
+        }
+        .map-placeholder {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+        .placeholder-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .placeholder-description {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        .download-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Placeholder Images for QuickMark Spaza Website</h1>
+        
+        <div class="instructions">
+            <h3>📋 How to Use These Placeholders:</h3>
+            <p>These are temporary placeholder images you can use while developing your website. They're created using CSS and can be easily replaced with real images later.</p>
+            <ol>
+                <li>Right-click on any placeholder image below</li>
+                <li>Select "Save image as..." or "Save picture as..."</li>
+                <li>Save with the exact filename shown (e.g., "shop-front.jpg")</li>
+                <li>Save all images to your <code>images/</code> folder</li>
+                <li>Replace with real images when available</li>
+            </ol>
+        </div>
+
+        <div class="placeholder-grid">
+            <!-- Homepage Images -->
+            <div class="placeholder-item">
+                <div class="placeholder-image shop-placeholder" id="shop-front">
+                    🏪<br>QUICKMARK<br>SPAZA SHOP<br>FRONT VIEW
+                </div>
+                <div class="placeholder-name">shop-front.jpg</div>
+                <div class="placeholder-description">Shop exterior/storefront image</div>
+                <button class="download-btn" onclick="downloadPlaceholder('shop-front', 'shop-front.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="maize-meal">
+                    🌽<br>MAIZE MEAL<br>2.5KG<br>R25.99
+                </div>
+                <div class="placeholder-name">maize-meal.jpg</div>
+                <div class="placeholder-description">White maize meal product</div>
+                <button class="download-btn" onclick="downloadPlaceholder('maize-meal', 'maize-meal.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="bread">
+                    🍞<br>FRESH BREAD<br>WHITE LOAF<br>R12.50
+                </div>
+                <div class="placeholder-name">bread.jpg</div>
+                <div class="placeholder-description">Fresh white bread</div>
+                <button class="download-btn" onclick="downloadPlaceholder('bread', 'bread.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="cool-drinks">
+                    🥤<br>COOL DRINKS<br>ASSORTED<br>R15.00
+                </div>
+                <div class="placeholder-name">cool-drinks.jpg</div>
+                <div class="placeholder-description">Soft drinks and beverages</div>
+                <button class="download-btn" onclick="downloadPlaceholder('cool-drinks', 'cool-drinks.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="soap">
+                    🧼<br>BATH SOAP<br>& TOILETRIES<br>R8.99
+                </div>
+                <div class="placeholder-name">soap.jpg</div>
+                <div class="placeholder-description">Personal care items</div>
+                <button class="download-btn" onclick="downloadPlaceholder('soap', 'soap.jpg')">Save as Image</button>
+            </div>
+
+            <!-- About Page Images -->
+            <div class="placeholder-item">
+                <div class="placeholder-image person-placeholder" id="shop-owner">
+                    👩‍💼<br>MRS. SARAH<br>MTHEMBU<br>SHOP OWNER
+                </div>
+                <div class="placeholder-name">shop-owner.jpg</div>
+                <div class="placeholder-description">Shop owner portrait</div>
+                <button class="download-btn" onclick="downloadPlaceholder('shop-owner', 'shop-owner.jpg')">Save as Image</button>
+            </div>
+
+            <!-- Products Page Images -->
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="rice">
+                    🍚<br>WHITE RICE<br>2KG PACK<br>R28.99
+                </div>
+                <div class="placeholder-name">rice.jpg</div>
+                <div class="placeholder-description">Long grain white rice</div>
+                <button class="download-btn" onclick="downloadPlaceholder('rice', 'rice.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="sugar">
+                    🍯<br>WHITE SUGAR<br>2KG PACK<br>R22.50
+                </div>
+                <div class="placeholder-name">sugar.jpg</div>
+                <div class="placeholder-description">Granulated white sugar</div>
+                <button class="download-btn" onclick="downloadPlaceholder('sugar', 'sugar.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="coca-cola">
+                    🥤<br>COCA COLA<br>500ML<br>R15.00
+                </div>
+                <div class="placeholder-name">coca-cola.jpg</div>
+                <div class="placeholder-description">Coca Cola soft drink</div>
+                <button class="download-btn" onclick="downloadPlaceholder('coca-cola', 'coca-cola.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="water">
+                    💧<br>BOTTLED<br>WATER<br>R8.50
+                </div>
+                <div class="placeholder-name">water.jpg</div>
+                <div class="placeholder-description">Pure spring water</div>
+                <button class="download-btn" onclick="downloadPlaceholder('water', 'water.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="oros">
+                    🍊<br>OROS<br>ORANGE<br>R18.99
+                </div>
+                <div class="placeholder-name">oros.jpg</div>
+                <div class="placeholder-description">Orange squash concentrate</div>
+                <button class="download-btn" onclick="downloadPlaceholder('oros', 'oros.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="toothpaste">
+                    🦷<br>TOOTHPASTE<br>FLUORIDE<br>R12.99
+                </div>
+                <div class="placeholder-name">toothpaste.jpg</div>
+                <div class="placeholder-description">Fluoride toothpaste</div>
+                <button class="download-btn" onclick="downloadPlaceholder('toothpaste', 'toothpaste.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="candles">
+                    🕯️<br>CANDLES<br>PACK OF 6<br>R15.50
+                </div>
+                <div class="placeholder-name">candles.jpg</div>
+                <div class="placeholder-description">Emergency candles</div>
+                <button class="download-btn" onclick="downloadPlaceholder('candles', 'candles.jpg')">Save as Image</button>
+            </div>
+
+            <div class="placeholder-item">
+                <div class="placeholder-image product-placeholder" id="matches">
+                    🔥<br>SAFETY<br>MATCHES<br>R3.50
+                </div>
+                <div class="placeholder-name">matches.jpg</div>
+                <div class="placeholder-description">Box of safety matches</div>
+                <button class="download-btn" onclick="downloadPlaceholder('matches', 'matches.jpg')">Save as Image</button>
+            </div>
+
+            <!-- Contact Page Images -->
+            <div class="placeholder-item">
+                <div class="placeholder-image map-placeholder" id="map-placeholder">
+                    🗺️<br>SOWETO MAP<br>QUICKMARK<br>LOCATION
+                </div>
+                <div class="placeholder-name">map-placeholder.jpg</div>
+                <div class="placeholder-description">Map showing shop location</div>
+                <button class="download-btn" onclick="downloadPlaceholder('map-placeholder', 'map-placeholder.jpg')">Save as Image</button>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>📝 Important Notes:</strong>
+            <ul>
+                <li>These are temporary placeholder images for development purposes</li>
+                <li>Replace with real product photos for a professional website</li>
+                <li>All placeholders are 250x200 pixels - suitable for web use</li>
+                <li>The download function creates a canvas-based image from the CSS styling</li>
+                <li>For best results, use actual product photography when possible</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function downloadPlaceholder(elementId, filename) {
+            const element = document.getElementById(elementId);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = 250;
+            canvas.height = 200;
+            
+            // Get computed styles
+            const styles = window.getComputedStyle(element);
+            const gradient = styles.backgroundImage;
+            
+            // Create gradient
+            let grad;
+            if (elementId.includes('product') || elementId.includes('maize') || elementId.includes('bread') || elementId.includes('cool') || elementId.includes('soap') || elementId.includes('rice') || elementId.includes('sugar') || elementId.includes('coca') || elementId.includes('water') || elementId.includes('oros') || elementId.includes('toothpaste') || elementId.includes('candles') || elementId.includes('matches')) {
+                grad = ctx.createLinearGradient(0, 0, 250, 200);
+                grad.addColorStop(0, '#3498db');
+                grad.addColorStop(1, '#2980b9');
+            } else if (elementId.includes('shop')) {
+                grad = ctx.createLinearGradient(0, 0, 250, 200);
+                grad.addColorStop(0, '#e74c3c');
+                grad.addColorStop(1, '#c0392b');
+            } else if (elementId.includes('owner')) {
+                grad = ctx.createLinearGradient(0, 0, 250, 200);
+                grad.addColorStop(0, '#27ae60');
+                grad.addColorStop(1, '#229954');
+            } else if (elementId.includes('map')) {
+                grad = ctx.createLinearGradient(0, 0, 250, 200);
+                grad.addColorStop(0, '#f39c12');
+                grad.addColorStop(1, '#e67e22');
+            }
+            
+            // Fill background
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, 250, 200);
+            
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            
+            const text = element.textContent.trim();
+            const lines = text.split('\n').filter(line => line.trim());
+            const lineHeight = 25;
+            const startY = (200 - (lines.length * lineHeight)) / 2 + lineHeight;
+            
+            lines.forEach((line, index) => {
+                ctx.fillText(line.trim(), 125, startY + (index * lineHeight));
+            });
+            
+            // Download
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
+</html>

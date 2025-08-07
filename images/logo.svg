@@ -1,0 +1,48 @@
+<!-- QuickMark Spaza Shop Logo - SVG Format -->
+<!-- This logo combines a shopping basket icon with the shop name -->
+<!-- Colors match the website's branding: Red (#e74c3c) and Dark Blue (#2c3e50) -->
+
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for logo -->
+  <circle cx="40" cy="40" r="35" fill="#e74c3c" stroke="#2c3e50" stroke-width="2"/>
+  
+  <!-- Shopping basket icon -->
+  <g transform="translate(20, 20)">
+    <!-- Basket body -->
+    <path d="M5 15 L35 15 L33 35 L7 35 Z" fill="#ffffff" stroke="#2c3e50" stroke-width="1.5"/>
+    
+    <!-- Basket handle -->
+    <path d="M12 15 L12 8 Q12 5 15 5 L25 5 Q28 5 28 8 L28 15" 
+          fill="none" stroke="#2c3e50" stroke-width="2"/>
+    
+    <!-- Basket weave pattern -->
+    <line x1="10" y1="20" x2="30" y2="20" stroke="#e74c3c" stroke-width="1"/>
+    <line x1="10" y1="25" x2="30" y2="25" stroke="#e74c3c" stroke-width="1"/>
+    <line x1="10" y1="30" x2="30" y2="30" stroke="#e74c3c" stroke-width="1"/>
+    
+    <!-- Vertical weave lines -->
+    <line x1="15" y1="15" x2="15" y2="35" stroke="#e74c3c" stroke-width="1"/>
+    <line x1="20" y1="15" x2="20" y2="35" stroke="#e74c3c" stroke-width="1"/>
+    <line x1="25" y1="15" x2="25" y2="35" stroke="#e74c3c" stroke-width="1"/>
+  </g>
+  
+  <!-- Shop name text -->
+  <text x="85" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+    QuickMark
+  </text>
+  
+  <!-- Spaza text -->
+  <text x="85" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#e74c3c">
+    SPAZA SHOP
+  </text>
+  
+  <!-- Tagline -->
+  <text x="85" y="65" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#7f8c8d">
+    Your Community Shop
+  </text>
+  
+  <!-- Decorative elements -->
+  <circle cx="175" cy="20" r="3" fill="#e74c3c"/>
+  <circle cx="185" cy="25" r="2" fill="#3498db"/>
+  <circle cx="180" cy="35" r="2.5" fill="#e74c3c"/>
+</svg>

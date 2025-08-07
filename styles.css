@@ -1,0 +1,761 @@
+/* 
+   CSS Stylesheet for QuickMark Spaza Shop Website
+   NQF Level 4 IT and Computer Science NCV Computer Programming ISAT
+   
+   This stylesheet contains all the styling rules for the website
+   including layout, colors, fonts, and responsive design
+*/
+
+/* ===== GLOBAL STYLES ===== */
+
+/* Reset default browser styles and set global properties */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in element width/height */
+}
+
+/* Set base font and background for entire website */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6; /* Improve text readability */
+    color: #333; /* Dark gray text color */
+    background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Container class for consistent page width and centering */
+.container {
+    max-width: 1200px; /* Maximum width for large screens */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add padding on sides */
+}
+
+/* ===== HEADER STYLES ===== */
+
+/* Main header styling */
+header {
+    background-color: #2c3e50; /* Dark blue-gray background */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow below header */
+}
+
+/* Header container layout */
+header .container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Vertically center items */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Logo section styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 60px; /* Set logo height */
+    width: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.logo-image:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Fallback text styling (if logo doesn't load) */
+.logo h1 {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+    color: #e74c3c; /* Red color for shop name */
+}
+
+.logo .tagline {
+    font-size: 0.9rem;
+    color: #bdc3c7; /* Light gray for tagline */
+    font-style: italic;
+}
+
+/* Navigation menu styling */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex;
+    gap: 2rem; /* Space between menu items */
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Remove underlines */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    background-color: #34495e; /* Darker background on hover */
+}
+
+/* Active page styling */
+nav a.active {
+    background-color: #e74c3c; /* Red background for current page */
+}
+
+/* ===== MAIN CONTENT STYLES ===== */
+
+main {
+    min-height: calc(100vh - 200px); /* Ensure main content takes up most of screen */
+}
+
+/* ===== HERO SECTION (Homepage) ===== */
+
+.hero {
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Blue gradient background */
+    color: white;
+    padding: 4rem 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px; /* Minimum width for responsive design */
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* Call-to-action button styling */
+.cta-button {
+    background-color: #e74c3c; /* Red background */
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Hero image styling */
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ===== PAGE HEADER STYLES ===== */
+
+.page-header {
+    background-color: #34495e;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #bdc3c7;
+}
+
+/* ===== SECTION STYLES ===== */
+
+/* General section styling */
+section {
+    padding: 3rem 0;
+}
+
+/* Alternating background colors for sections */
+section:nth-child(even) {
+    background-color: white;
+}
+
+section:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+/* Section headings */
+section h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* ===== PRODUCT GRID STYLES ===== */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Individual product card styling */
+.product-card, .product-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect for product cards */
+.product-card:hover, .product-item:hover {
+    transform: translateY(-5px); /* Lift card slightly */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Product image styling */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Maintain aspect ratio while filling container */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Product information styling */
+.product-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #e74c3c; /* Red color for prices */
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: #7f8c8d; /* Gray color for descriptions */
+    margin-bottom: 1rem;
+}
+
+/* ===== BUTTON STYLES ===== */
+
+/* General button styling */
+button, .info-btn, .submit-btn {
+    background-color: #3498db; /* Blue background */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .info-btn:hover, .submit-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Clear button styling (different color) */
+.clear-btn {
+    background-color: #95a5a6; /* Gray background */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+    background-color: #7f8c8d; /* Darker gray on hover */
+}
+
+/* ===== FORM STYLES ===== */
+
+/* Form group container */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Form labels */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Form input fields */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus state for form fields */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db; /* Blue border when focused */
+}
+
+/* Error message styling */
+.error-message {
+    color: #e74c3c; /* Red color for errors */
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+/* Success message styling */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin-top: 1rem;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Hide elements */
+.hidden {
+    display: none;
+}
+
+/* Text alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Margin utilities */
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+
+/* ===== FOOTER STYLES ===== */
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    /* Adjust header for smaller screens */
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Stack hero content vertically */
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Reduce font sizes */
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    /* Adjust navigation for mobile */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    /* Reduce grid columns on smaller screens */
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    /* Reduce container padding */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Smaller font sizes for mobile */
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Single column layout for products */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust section padding */
+    section {
+        padding: 2rem 0;
+    }
+}
+
+/* ===== ADDITIONAL COMPONENT STYLES ===== */
+
+/* Info cards styling (used in About and Contact pages) */
+.info-grid, .values-grid, .achievement-grid, .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card, .value-card, .achievement-item, .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover, .value-card:hover, .achievement-item:hover, .service-card:hover {
+    transform: translateY(-3px);
+}
+
+.info-card h4, .value-card h4, .achievement-item h4, .service-card h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Achievement items special styling */
+.achievement-item {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.achievement-item.highlighted {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+}
+
+/* Story content layout */
+.story-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.story-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.story-image {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.story-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.image-caption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Contact page specific styles */
+.contact-content {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+/* Map section styling */
+.map-section {
+    background-color: #ecf0f1;
+}
+
+.map-placeholder {
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.map-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(44, 62, 80, 0.9);
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Product search and filter styles */
+.product-search {
+    background-color: white;
+    padding: 2rem 0;
+}
+
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    flex: 1;
+    max-width: 400px;
+    padding: 0.8rem;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.category-filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border: 2px solid #bdc3c7;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #d5dbdb;
+}
+
+.filter-btn.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* Product category sections */
+.product-category {
+    margin-bottom: 3rem;
+}
+
+.product-category h3 {
+    text-align: left;
+    color: #2c3e50;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Modal styles for product details */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Higher z-index to ensure it's on top */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Hidden state for modal */
+.modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* Scale effect when modal is hidden */
+.modal.hidden .modal-content {
+    transform: scale(0.8);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #7f8c8d;
+    background: none;
+    border: none;
+    padding: 5px;
+    line-height: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+    background-color: #f8f9fa;
+}
+
+.close-btn:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Modal content styling */
+.modal-content h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.modal-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.modal-content button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* Ensure modal is above everything else */
+.modal {
+    z-index: 10000 !important;
+}
+
+/* Prevent scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Responsive adjustments for additional components */
+@media (max-width: 768px) {
+    .story-content, .contact-content {
+        flex-direction: column;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-bar input {
+        max-width: 100%;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .info-grid, .values-grid, .achievement-grid, .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

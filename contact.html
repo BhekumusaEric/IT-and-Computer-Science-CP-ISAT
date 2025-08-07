@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title for Contact page -->
+    <title>Contact Us - QuickMark Spaza Shop</title>
+    
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header>
+        <div class="container">
+            <!-- Shop logo and name -->
+            <div class="logo">
+                <img src="images/logo.svg" alt="QuickMark Spaza Shop Logo" class="logo-image">
+            </div>
+            
+            <!-- Navigation menu -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area for Contact page -->
+    <main>
+        <!-- Page header section -->
+        <section class="page-header">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Get in touch with QuickMark Spaza Shop</p>
+            </div>
+        </section>
+
+        <!-- Contact information and form section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <!-- Contact information -->
+                    <div class="contact-info">
+                        <h3>Visit Our Shop</h3>
+                        
+                        <!-- Address information -->
+                        <div class="info-item">
+                            <h4>📍 Address</h4>
+                            <p>123 Main Street<br>
+                            Soweto, Johannesburg<br>
+                            Gauteng, 1818</p>
+                        </div>
+                        
+                        <!-- Phone contact -->
+                        <div class="info-item">
+                            <h4>📞 Phone</h4>
+                            <p>011-123-4567</p>
+                            <p>WhatsApp: 071-234-5678</p>
+                        </div>
+                        
+                        <!-- Email contact -->
+                        <div class="info-item">
+                            <h4>📧 Email</h4>
+                            <p>quickmark@spaza.co.za</p>
+                        </div>
+                        
+                        <!-- Operating hours -->
+                        <div class="info-item">
+                            <h4>🕒 Operating Hours</h4>
+                            <p><strong>Monday - Saturday:</strong><br>7:00 AM - 8:00 PM</p>
+                            <p><strong>Sunday:</strong><br>8:00 AM - 6:00 PM</p>
+                            <p><strong>Public Holidays:</strong><br>9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact form -->
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <p>Have a question or suggestion? We'd love to hear from you!</p>
+                        
+                        <!-- Form with validation -->
+                        <form id="contactForm" onsubmit="return validateAndSubmitForm(event)">
+                            <!-- Name input field -->
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+                            
+                            <!-- Email input field -->
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                            
+                            <!-- Phone input field -->
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                                <span class="error-message" id="phoneError"></span>
+                            </div>
+                            
+                            <!-- Subject selection -->
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Please select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="products">Product Availability</option>
+                                    <option value="delivery">Delivery Request</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="suggestion">Suggestion</option>
+                                </select>
+                                <span class="error-message" id="subjectError"></span>
+                            </div>
+                            
+                            <!-- Message textarea -->
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Please enter your message here..."></textarea>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+                            
+                            <!-- Form submission buttons -->
+                            <div class="form-buttons">
+                                <button type="submit" class="submit-btn">Send Message</button>
+                                <button type="button" class="clear-btn" onclick="clearForm()">Clear Form</button>
+                            </div>
+                        </form>
+                        
+                        <!-- Success message (hidden by default) -->
+                        <div id="successMessage" class="success-message hidden">
+                            <h4>✅ Message Sent Successfully!</h4>
+                            <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map section -->
+        <section class="map-section">
+            <div class="container">
+                <h3>Find Us</h3>
+                <!-- Placeholder for map - in a real implementation, this would be a Google Maps embed -->
+                <div class="map-placeholder">
+                    <img src="images/map-placeholder.jpg" alt="Map showing QuickMark Spaza location" class="map-image">
+                    <div class="map-overlay">
+                        <p>📍 QuickMark Spaza Shop<br>123 Main Street, Soweto</p>
+                        <button onclick="showDirections()">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional services section -->
+        <section class="services-info">
+            <div class="container">
+                <h3>Additional Services</h3>
+                <div class="services-grid">
+                    <!-- Delivery service -->
+                    <div class="service-card">
+                        <h4>🚚 Local Delivery</h4>
+                        <p>We offer delivery service within 5km radius for orders over R50. Contact us to arrange delivery.</p>
+                    </div>
+                    
+                    <!-- Special orders -->
+                    <div class="service-card">
+                        <h4>📋 Special Orders</h4>
+                        <p>Need something we don't usually stock? Let us know and we'll try to get it for you.</p>
+                    </div>
+                    
+                    <!-- Community support -->
+                    <div class="service-card">
+                        <h4>🤝 Community Support</h4>
+                        <p>We support local events and initiatives. Contact us to discuss sponsorship opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 QuickMark Spaza Shop. Serving the community with pride.</p>
+            <p>Contact us: 011-123-4567 | quickmark@spaza.co.za</p>
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title for About page -->
+    <title>About Us - QuickMark Spaza Shop</title>
+    
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header>
+        <div class="container">
+            <!-- Shop logo and name -->
+            <div class="logo">
+                <img src="images/logo.svg" alt="QuickMark Spaza Shop Logo" class="logo-image">
+            </div>
+            
+            <!-- Navigation menu -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area for About page -->
+    <main>
+        <!-- Page header section -->
+        <section class="page-header">
+            <div class="container">
+                <h2>About QuickMark Spaza</h2>
+                <p>Learn more about our story and mission</p>
+            </div>
+        </section>
+
+        <!-- Our story section -->
+        <section class="our-story">
+            <div class="container">
+                <div class="story-content">
+                    <!-- Story text content -->
+                    <div class="story-text">
+                        <h3>Our Story</h3>
+                        <p>QuickMark Spaza Shop was established in 2018 with a simple mission: to provide our community in Soweto with convenient access to essential groceries and household items at affordable prices.</p>
+                        
+                        <p>What started as a small family business has grown into a trusted neighborhood shop that serves over 200 customers daily. We take pride in being more than just a shop - we're a vital part of the community fabric.</p>
+                        
+                        <!-- Interactive button to show more details -->
+                        <button class="info-button" onclick="toggleStoryDetails(this)">Read More</button>
+                        
+                        <!-- Hidden details that can be shown with JavaScript -->
+                        <div id="story-details" class="hidden">
+                            <p>Our founder, Mrs. Sarah Mthembu, started this business to create employment opportunities in the community and ensure that fresh, quality products are always available to local families.</p>
+                            
+                            <p>Today, we employ 5 local residents and continue to support community initiatives and local suppliers whenever possible.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Owner/shop image -->
+                    <div class="story-image">
+                        <img src="images/shop-owner.jpg" alt="Shop Owner Mrs. Sarah Mthembu" id="ownerImg">
+                        <p class="image-caption">Mrs. Sarah Mthembu, Founder & Owner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission and values section -->
+        <section class="mission-values">
+            <div class="container">
+                <h3>Our Mission & Values</h3>
+                
+                <div class="values-grid">
+                    <!-- Mission statement -->
+                    <div class="value-card">
+                        <h4>Our Mission</h4>
+                        <p>To serve our community with quality products, fair prices, and exceptional customer service while supporting local economic development.</p>
+                    </div>
+                    
+                    <!-- Core values -->
+                    <div class="value-card">
+                        <h4>Community First</h4>
+                        <p>We believe in supporting our neighbors and contributing to the growth and prosperity of our local community.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h4>Quality & Affordability</h4>
+                        <p>We carefully select our products to ensure freshness and quality while maintaining competitive prices.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h4>Reliable Service</h4>
+                        <p>Our customers can count on us for consistent operating hours, well-stocked shelves, and friendly service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements section -->
+        <section class="achievements">
+            <div class="container">
+                <h3>Our Achievements</h3>
+                
+                <!-- Statistics and milestones -->
+                <div class="achievement-grid">
+                    <div class="achievement-item" onclick="highlightAchievement(this)">
+                        <h4>6+ Years</h4>
+                        <p>Operating since 2018</p>
+                    </div>
+                    
+                    <div class="achievement-item" onclick="highlightAchievement(this)">
+                        <h4>200+</h4>
+                        <p>Daily customers served</p>
+                    </div>
+                    
+                    <div class="achievement-item" onclick="highlightAchievement(this)">
+                        <h4>5</h4>
+                        <p>Local jobs created</p>
+                    </div>
+                    
+                    <div class="achievement-item" onclick="highlightAchievement(this)">
+                        <h4>100%</h4>
+                        <p>Community owned</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 QuickMark Spaza Shop. Serving the community with pride.</p>
+            <p>Contact us: 011-123-4567 | quickmark@spaza.co.za</p>
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

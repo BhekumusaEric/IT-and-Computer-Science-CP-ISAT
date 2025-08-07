@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title for Products page -->
+    <title>Our Products - QuickMark Spaza Shop</title>
+    
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header>
+        <div class="container">
+            <!-- Shop logo and name -->
+            <div class="logo">
+                <img src="images/logo.svg" alt="QuickMark Spaza Shop Logo" class="logo-image">
+            </div>
+            
+            <!-- Navigation menu -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area for Products page -->
+    <main>
+        <!-- Page header section -->
+        <section class="page-header">
+            <div class="container">
+                <h2>Our Products</h2>
+                <p>Essential items for your daily needs - all at affordable prices</p>
+            </div>
+        </section>
+
+        <!-- Product search and filter section -->
+        <section class="product-search">
+            <div class="container">
+                <!-- Search bar for finding products -->
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProducts()">
+                    <button onclick="searchProducts()">Search</button>
+                </div>
+                
+                <!-- Category filter buttons -->
+                <div class="category-filters">
+                    <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
+                    <button class="filter-btn" onclick="filterProducts('groceries', this)">Groceries</button>
+                    <button class="filter-btn" onclick="filterProducts('drinks', this)">Drinks</button>
+                    <button class="filter-btn" onclick="filterProducts('toiletries', this)">Toiletries</button>
+                    <button class="filter-btn" onclick="filterProducts('household', this)">Household</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products display section -->
+        <section class="products-display">
+            <div class="container">
+                <!-- Groceries category -->
+                <div class="product-category" data-category="groceries">
+                    <h3>Groceries</h3>
+                    <div class="product-grid">
+                        <!-- Individual product items -->
+                        <div class="product-item" data-name="maize meal">
+                            <img src="images/maize-meal.jpg" alt="Maize Meal" class="product-image">
+                            <div class="product-info">
+                                <h4>Maize Meal (2.5kg)</h4>
+                                <p class="price">R25.99</p>
+                                <p class="description">Premium white maize meal</p>
+                                <button class="info-btn" onclick="showProductDetails('Maize Meal', 'R25.99', 'Premium white maize meal, perfect for making pap and other traditional dishes.')">More Info</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-item" data-name="bread">
+                            <img src="images/bread.jpg" alt="Fresh Bread" class="product-image">
+                            <div class="product-info">
+                                <h4>Fresh Bread</h4>
+                                <p class="price">R12.50</p>
+                                <p class="description">Daily fresh white bread</p>
+                                <button class="info-btn" onclick="showProductDetails('Fresh Bread', 'R12.50', 'Freshly baked white bread delivered daily from local bakery.')">More Info</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-item" data-name="rice">
+                            <img src="images/rice.jpg" alt="Rice" class="product-image">
+                            <div class="product-info">
+                                <h4>Rice (2kg)</h4>
+                                <p class="price">R28.99</p>
+                                <p class="description">Long grain white rice</p>
+                                <button class="info-btn" onclick="showProductDetails('Rice', 'R28.99', 'High quality long grain white rice, perfect for family meals.')">More Info</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-item" data-name="sugar">
+                            <img src="images/sugar.jpg" alt="Sugar" class="product-image">
+                            <div class="product-info">
+                                <h4>Sugar (2kg)</h4>
+                                <p class="price">R22.50</p>
+                                <p class="description">White granulated sugar</p>
+                                <button class="info-btn" onclick="showProductDetails('Sugar', 'R22.50', 'Pure white granulated sugar for all your cooking and baking needs.')">More Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks category -->
+                <div class="product-category" data-category="drinks">
+                    <h3>Drinks & Beverages</h3>
+                    <div class="product-grid">
+                        <div class="product-item" data-name="coca cola">
+                            <img src="images/coca-cola.jpg" alt="Coca Cola" class="product-image">
+                            <div class="product-info">
+                                <h4>Coca Cola (500ml)</h4>
+                                <p class="price">R15.00</p>
+                                <p class="description">Refreshing cola drink</p>
+                                <button class="info-btn" onclick="showProductDetails('Coca Cola', 'R15.00', 'Ice-cold Coca Cola in 500ml bottles, perfect for any occasion.')">More Info</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-item" data-name="water">
+                            <img src="images/water.jpg" alt="Bottled Water" class="product-image">
+                            <div class="product-info">
+                                <h4>Bottled Water (500ml)</h4>
+                                <p class="price">R8.50</p>
+                                <p class="description">Pure spring water</p>
+                                <button class="info-btn" onclick="showProductDetails('Bottled Water', 'R8.50', 'Pure spring water in convenient 500ml bottles.')">More Info</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-item" data-name="oros">
+                            <img src="images/oros.jpg" alt="Oros" class="product-image">
+                            <div class="product-info">
+                                <h4>Oros (2L)</h4>
+                                <p class="price">R18.99</p>
+                                <p class="description">Orange squash concentrate</p>
+                                <button class="info-btn" onclick="showProductDetails('Oros', 'R18.99', 'Delicious orange squash concentrate, makes up to 10 liters of drink.')">More Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toiletries category -->
+                <div class="product-category" data-category="toiletries">
+                    <h3>Toiletries & Personal Care</h3>
+                    <div class="product-grid">
+                        <div class="product-item" data-name="soap">
+                            <img src="images/soap.jpg" alt="Bath Soap" class="product-image">
+                            <div class="product-info">
+                                <h4>Bath Soap</h4>
+                                <p class="price">R8.99</p>
+                                <p class="description">Gentle cleansing soap</p>
+                                <button class="info-btn" onclick="showProductDetails('Bath Soap', 'R8.99', 'Gentle cleansing soap with moisturizing properties.')">More Info</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-item" data-name="toothpaste">
+                            <img src="images/toothpaste.jpg" alt="Toothpaste" class="product-image">
+                            <div class="product-info">
+                                <h4>Toothpaste</h4>
+                                <p class="price">R12.99</p>
+                                <p class="description">Fluoride toothpaste</p>
+                                <button class="info-btn" onclick="showProductDetails('Toothpaste', 'R12.99', 'Fluoride toothpaste for healthy teeth and fresh breath.')">More Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Household items category -->
+                <div class="product-category" data-category="household">
+                    <h3>Household Items</h3>
+                    <div class="product-grid">
+                        <div class="product-item" data-name="candles">
+                            <img src="images/candles.jpg" alt="Candles" class="product-image">
+                            <div class="product-info">
+                                <h4>Candles (Pack of 6)</h4>
+                                <p class="price">R15.50</p>
+                                <p class="description">Emergency candles</p>
+                                <button class="info-btn" onclick="showProductDetails('Candles', 'R15.50', 'Pack of 6 emergency candles for power outages.')">More Info</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-item" data-name="matches">
+                            <img src="images/matches.jpg" alt="Matches" class="product-image">
+                            <div class="product-info">
+                                <h4>Matches</h4>
+                                <p class="price">R3.50</p>
+                                <p class="description">Safety matches</p>
+                                <button class="info-btn" onclick="showProductDetails('Matches', 'R3.50', 'Box of safety matches for lighting candles and stoves.')">More Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product details modal (hidden by default) -->
+        <div id="productModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeProductModal()">&times;</span>
+                <h3 id="modalTitle"></h3>
+                <p id="modalPrice"></p>
+                <p id="modalDescription"></p>
+                <button onclick="closeProductModal()">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 QuickMark Spaza Shop. Serving the community with pride.</p>
+            <p>Contact us: 011-123-4567 | quickmark@spaza.co.za</p>
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

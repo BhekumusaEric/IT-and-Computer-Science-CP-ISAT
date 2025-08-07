@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title that appears in browser tab -->
+    <title>QuickMark Spaza Shop - Home</title>
+    
+    <!-- Link to external CSS stylesheet for styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header section containing logo and navigation -->
+    <header>
+        <div class="container">
+            <!-- Shop logo and name -->
+            <div class="logo">
+                <img src="images/logo.svg" alt="QuickMark Spaza Shop Logo" class="logo-image">
+            </div>
+            
+            <!-- Navigation menu for different pages -->
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main>
+        <!-- Hero section with welcome message -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Welcome to QuickMark Spaza!</h2>
+                    <p>We are a locally-owned spaza shop in Soweto, providing affordable everyday groceries to the community since 2018.</p>
+                    
+                    <!-- Call-to-action button -->
+                    <button class="cta-button" onclick="showWelcomeMessage()">Learn More About Us</button>
+                </div>
+                
+                <!-- Hero image placeholder -->
+                <div class="hero-image">
+                    <img src="images/shop-front.jpg" alt="QuickMark Spaza Shop Front" id="heroImg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured products section -->
+        <section class="featured-products">
+            <div class="container">
+                <h3>What We Offer</h3>
+                <p>Essential items for your daily needs</p>
+                
+                <!-- Product grid showing sample items -->
+                <div class="product-grid">
+                    <!-- Product card 1 -->
+                    <div class="product-card" onclick="showProductInfo('Maize Meal')">
+                        <img src="images/maize-meal.jpg" alt="Maize Meal" class="product-image">
+                        <h4>Maize Meal</h4>
+                        <p class="price">R25.99</p>
+                        <p class="description">Essential staple food</p>
+                    </div>
+                    
+                    <!-- Product card 2 -->
+                    <div class="product-card" onclick="showProductInfo('Fresh Bread')">
+                        <img src="images/bread.jpg" alt="Fresh Bread" class="product-image">
+                        <h4>Fresh Bread</h4>
+                        <p class="price">R12.50</p>
+                        <p class="description">Daily fresh bread</p>
+                    </div>
+                    
+                    <!-- Product card 3 -->
+                    <div class="product-card" onclick="showProductInfo('Cool Drinks')">
+                        <img src="images/cool-drinks.jpg" alt="Cool Drinks" class="product-image">
+                        <h4>Cool Drinks</h4>
+                        <p class="price">R15.00</p>
+                        <p class="description">Refreshing beverages</p>
+                    </div>
+                    
+                    <!-- Product card 4 -->
+                    <div class="product-card" onclick="showProductInfo('Soap & Toiletries')">
+                        <img src="images/soap.jpg" alt="Soap and Toiletries" class="product-image">
+                        <h4>Soap & Toiletries</h4>
+                        <p class="price">R8.99</p>
+                        <p class="description">Personal care items</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop information section -->
+        <section class="shop-info">
+            <div class="container">
+                <div class="info-grid">
+                    <!-- Operating hours -->
+                    <div class="info-card">
+                        <h4>Operating Hours</h4>
+                        <p>Monday - Saturday: 7:00 AM - 8:00 PM</p>
+                        <p>Sunday: 8:00 AM - 6:00 PM</p>
+                    </div>
+                    
+                    <!-- Location info -->
+                    <div class="info-card">
+                        <h4>Location</h4>
+                        <p>123 Main Street</p>
+                        <p>Soweto, Johannesburg</p>
+                        <p>Phone: 011-123-4567</p>
+                    </div>
+                    
+                    <!-- Services offered -->
+                    <div class="info-card">
+                        <h4>Our Services</h4>
+                        <p>✓ Fresh groceries daily</p>
+                        <p>✓ Airtime & electricity</p>
+                        <p>✓ Friendly service</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 QuickMark Spaza Shop. Serving the community with pride.</p>
+            <p>Contact us: 011-123-4567 | quickmark@spaza.co.za</p>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
