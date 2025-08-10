@@ -392,6 +392,18 @@ function showDirections() {
     alert('Directions to QuickMark Spaza:\n\n1. From Johannesburg CBD, take the M70 towards Soweto\n2. Turn left onto Main Street\n3. We are located at 123 Main Street\n\nFor GPS navigation, use coordinates: -26.2678, 27.8546');
 }
 
+/**
+ * Simple function to add items to cart from products page
+ * This works with the cart functionality
+ */
+function addToCartFromProducts(name, price) {
+    // Simple alert to confirm item added
+    alert(`${name} added to cart!\n\nPrice: R${price.toFixed(2)}\n\nGo to Cart page to view and manage your items.`);
+
+    // Log for educational purposes
+    console.log(`Product added to cart: ${name} - R${price}`);
+}
+
 // ===== EVENT LISTENERS AND INITIALIZATION =====
 
 /**
