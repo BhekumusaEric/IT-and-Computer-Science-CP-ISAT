@@ -344,26 +344,111 @@ function clearErrorMessages() {
 }
 
 /**
- * Helper function to validate email format using regular expression
+ * Helper function to validate email format using simple if statements
  * @param {string} email - Email address to validate
  * @returns {boolean} - True if email is valid, false otherwise
  */
 function isValidEmail(email) {
-    // Regular expression for basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    // Check if email is empty
+    if (email === '') {
+        return false;
+    }
+
+    // Check if email contains @ symbol
+    if (email.indexOf('@') === -1) {
+        return false;
+    }
+
+    // Check if email contains a dot after @
+    const atPosition = email.indexOf('@');
+    const dotPosition = email.lastIndexOf('.');
+    if (dotPosition <= atPosition) {
+        return false;
+    }
+
+    // Check if there's text before @, between @ and ., and after .
+    if (atPosition < 1) {
+        return false; // No text before @
+    }
+
+    if (dotPosition - atPosition < 2) {
+        return false; // No text between @ and .
+    }
+
+    if (email.length - dotPosition < 3) {
+        return false; // No text after . (at least 2 characters)
+    }
+
+    // Check for spaces (not allowed in email)
+    if (email.indexOf(' ') !== -1) {
+        return false;
+    }
+
+    // If all checks pass, email is valid
+    return true;
 }
 
 /**
- * Helper function to validate phone number format
+ * Helper function to validate phone number format using simple if statements
  * @param {string} phone - Phone number to validate
  * @returns {boolean} - True if phone is valid, false otherwise
  */
 function isValidPhone(phone) {
-    // Regular expression for South African phone numbers
-    // Accepts formats like: 011-123-4567, 0111234567, +27111234567
-    const phoneRegex = /^(\+27|0)[0-9]{9,10}$|^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
-    return phoneRegex.test(phone.replace(/\s/g, '')); // Remove spaces before testing
+    // Remove spaces and dashes for easier checking
+    const cleanPhone = phone.replace(/\s/g, '').replace(/-/g, '');
+
+    // Check if phone is empty (optional field)
+    if (cleanPhone === '') {
+        return true; // Empty is valid since phone is optional
+    }
+
+    // Check minimum length (South African numbers are at least 10 digits)
+    if (cleanPhone.length < 10) {
+        return false;
+    }
+
+    // Check maximum length
+    if (cleanPhone.length > 13) {
+        return false;
+    }
+
+    // Check if starts with valid South African prefixes
+    if (cleanPhone.startsWith('+27')) {
+        // International format: +27 followed by 9 digits
+        if (cleanPhone.length !== 12) {
+            return false;
+        }
+        // Check if remaining characters are digits
+        const digits = cleanPhone.substring(3);
+        return isAllDigits(digits);
+    } else if (cleanPhone.startsWith('0')) {
+        // Local format: 0 followed by 9 digits
+        if (cleanPhone.length !== 10) {
+            return false;
+        }
+        // Check if remaining characters are digits
+        const digits = cleanPhone.substring(1);
+        return isAllDigits(digits);
+    } else {
+        return false; // Must start with +27 or 0
+    }
+}
+
+/**
+ * Helper function to check if string contains only digits
+ * @param {string} str - String to check
+ * @returns {boolean} - True if all characters are digits
+ */
+function isAllDigits(str) {
+    // Check each character using for loop
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charAt(i);
+        // Check if character is between '0' and '9'
+        if (char < '0' || char > '9') {
+            return false;
+        }
+    }
+    return true;
 }
 
 /**
@@ -449,6 +534,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize any other components as needed
+    //Initialize any other components as needed
     console.log('All interactive components initialized');
 });
